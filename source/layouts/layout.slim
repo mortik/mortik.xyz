@@ -15,13 +15,7 @@ html
       = stylesheet_link_tag "noscript"
   body.is-loading
     #wrapper
-      section#main
-        = yield
-      footer#footer
-        ul.copyright
-          li &copy; Marten Klitzke
-          li
-            a href="/imprint" Imprint
+      = yield
 
     /![if lte IE 8]
       = javascript_include_tag  "respond.min"
