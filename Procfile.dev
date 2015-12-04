@@ -1,1 +1,1 @@
-web: middleman -p 7100
+web: bundle exec middleman -p 7100
