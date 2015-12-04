@@ -9,3 +9,5 @@ gem 'middleman-gh-pages'
 gem 'middleman-syntax'
 
 gem 'slim'
+
+gem 'foreman'

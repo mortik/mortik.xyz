@@ -37,6 +37,8 @@ GEM
     eventmachine (1.0.8)
     execjs (2.6.0)
     ffi (1.9.10)
+    foreman (0.78.0)
+      thor (~> 0.19.1)
     haml (4.0.7)
       tilt
     hike (1.2.3)
@@ -141,6 +143,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  foreman
   middleman
   middleman-gh-pages
   middleman-livereload
