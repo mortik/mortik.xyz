@@ -32,7 +32,7 @@
   header {
     position: relative;
 
-    .back {
+    a.back {
       font-size: 80%;
       position: absolute;
       top: -2em;
@@ -61,7 +61,7 @@
     width: 100%;
     @include padding(2em, 2em);
 
-    header .back {
+    header a.back {
       top: -1em;
       right: -1em;
     }
