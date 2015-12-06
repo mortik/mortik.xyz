@@ -1,0 +1,14 @@
+footer#footer
+  ul.copyright
+    li &copy; Marten Klitzke
+    - if current_page.data.active_page != 'blog'
+      li
+        a href="/blog" Blog
+    - if current_page.data.active_page != 'imprint'
+      li
+        a href="/imprint" Imprint
+    - if current_page.data.active_page != 'index'
+      li
+        a href="/" Home
+    li
+      a.fa.fa-rss target="_blank" href="/feed.xml"

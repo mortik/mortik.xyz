@@ -4,6 +4,7 @@ html
     title Marten Klitzke
     meta charset="utf-8"
     meta name="viewport" content="width=device-width, initial-scale=1"
+    link href="/feed.xml" rel="alternate" title="Marten's Blog Feed" type="application/atom+xml"
     /![if lte IE 8]
       = javascript_include_tag  "html5shiv"
     = stylesheet_link_tag "main"
@@ -16,7 +17,9 @@ html
   body.is-loading
     #wrapper
       = yield
-
+      
+      = partial "layouts/footer"
+      
     /![if lte IE 8]
       = javascript_include_tag  "respond.min"
     javascript:

@@ -1,0 +1,15 @@
+---
+active_page: blog
+---
+section#blog
+  header
+    h1 Latest Articles
+  article#content
+    ul.articles-list
+      - blog.articles.group_by {|a| a.date.year }.each do |year, articles|
+        li
+          h2 = year
+          ul
+            - articles.each do |article|
+              li 
+                a href="#{article.url}" = article.title
