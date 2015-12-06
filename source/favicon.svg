@@ -5,9 +5,9 @@
     <desc>Created with Sketch.</desc>
     <defs></defs>
     <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
-        <text id="M" sketch:type="MSTextLayer" font-family="Source Sans Pro" font-size="233" font-weight="normal" fill="#555555">
-            <tspan x="27" y="188">M</tspan>
-        </text>
         <rect id="Rectangle-1" stroke-opacity="0" stroke="#979797" fill-opacity="0" fill="#D8D8D8" sketch:type="MSShapeGroup" x="1" y="1" width="220" height="220"></rect>
+        <text id="M" sketch:type="MSTextLayer" font-family="Source Sans Pro" font-size="233" font-weight="260" fill="#333333">
+            <tspan x="29" y="186">M</tspan>
+        </text>
     </g>
 </svg>
