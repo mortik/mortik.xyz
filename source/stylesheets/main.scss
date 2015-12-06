@@ -4,7 +4,6 @@
 @import 'libs/skel';
 @import 'font-awesome.min.css';
 @import url('http://fonts.googleapis.com/css?family=Source+Sans+Pro:300');
-
 /*
 	Identity by Pixelarity
 	pixelarity.com @pixelarity
@@ -68,3 +67,5 @@
 	@import 'layout/blog';
 	@import 'layout/footer';
 	@import 'layout/wrapper';
+
+	@import "highlight";

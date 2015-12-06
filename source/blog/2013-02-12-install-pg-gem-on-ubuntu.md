@@ -80,7 +80,7 @@ rvm implode
 and then
 
 ```
-\curl -L https://get.rvm.io | bash -s stable --ruby
+curl -L https://get.rvm.io | bash -s stable --ruby
 ```
 
 to reinstall the newest version.
