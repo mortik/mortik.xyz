@@ -7,6 +7,7 @@
           = current_article.title
         time
           = current_article.date.strftime('%B %d, %Y')
+      a.back.fa.fa-angle-left href="/blog" Back
     article#content
       = yield
       

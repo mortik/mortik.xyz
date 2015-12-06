@@ -30,6 +30,15 @@
   }
 
   header {
+    position: relative;
+
+    .back {
+      font-size: 80%;
+      position: absolute;
+      top: -2em;
+      right: -2em;
+    }
+
     time {
       font-size: 50%;
       display: block;
@@ -51,6 +60,11 @@
     min-width: 0;
     width: 100%;
     @include padding(2em, 2em);
+
+    header .back {
+      top: -1em;
+      right: -1em;
+    }
   }
 
   body.is-loading & {

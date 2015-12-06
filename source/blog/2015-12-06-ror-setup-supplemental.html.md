@@ -2,7 +2,7 @@
 title: RoR Setup Supplemental
 tags: Coding
 published: false
-active_page: article
+active_page: blog
 ---
 
 - dont do manual provisioning

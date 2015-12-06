@@ -2,7 +2,7 @@
 title: "Enable hstore on postgres"
 published: true
 tags: Coding
-active_page: article
+active_page: blog
 ---
 If you want to use the cool hstore feature which postgres provides you need to create the necessary extension for it.
 

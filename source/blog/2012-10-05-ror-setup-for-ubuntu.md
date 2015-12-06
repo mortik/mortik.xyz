@@ -2,7 +2,7 @@
 title: "RoR Setup for Ubuntu"
 published: true
 tags: Coding
-active_page: article
+active_page: blog
 ---
 This Blogpost gives you a slim checklist for your Ruby on Rails Setup for Ubuntu.
 

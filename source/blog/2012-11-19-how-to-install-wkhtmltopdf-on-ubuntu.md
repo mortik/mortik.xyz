@@ -2,7 +2,7 @@
 title: "How to install wkhtmltopdf on Ubuntu"
 published: true
 tags: Coding
-active_page: article
+active_page: blog
 ---
 ``` sh
 sudo apt-get install openssl build-essential xorg libssl-dev

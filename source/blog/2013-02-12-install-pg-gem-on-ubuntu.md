@@ -2,7 +2,7 @@
 title: "Install pg gem on Ubuntu"
 published: true
 tags: Coding
-active_page: article
+active_page: blog
 ---
 Recently i had to deal with a strange error during deployment of one of my apps. The deploy crashed everytime at the installation of the pg gem as you can see in the log below:
 

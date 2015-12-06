@@ -4,12 +4,8 @@ footer#footer
       a href="mailto:me@mortik.xyz" &copy; Marten Klitzke
     - if current_page.data.active_page != 'index'
       li
-        a href="/#{(current_page.data.active_page == 'article' ? 'blog' : '')}"
-          - if current_page.data.active_page == 'article'
-            |Blog
-          - else
-            |Home
-    - if current_page.data.active_page != 'blog' && current_page.data.active_page != 'article'
+        a href="/" Home
+    - if current_page.data.active_page != 'blog'
       li
         a href="/blog" Blog
     - if current_page.data.active_page != 'imprint'
