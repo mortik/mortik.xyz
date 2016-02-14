@@ -2,8 +2,7 @@ source 'http://rubygems.org'
 
 ruby '2.3.0'
 
-gem 'middleman'
-
+gem 'middleman', '< 4.0.0'
 gem 'middleman-blog'
 gem 'middleman-livereload'
 gem 'middleman-gh-pages'
