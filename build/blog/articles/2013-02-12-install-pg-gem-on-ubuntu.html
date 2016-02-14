@@ -1,0 +1,96 @@
+<!DOCTYPE html><html><head><title>Marten Klitzke</title><meta charset="utf-8" /><meta content="width=device-width, initial-scale=1" name="viewport" /><link color="#555555" href="/favicon-fa5e2576.svg" rel="mask-icon" /><link href="/favicon-b2e8bcaa.png" rel="shortcut icon" type="image/png" /><link href="/blog/feed.xml" rel="alternate" title="Marten's Blog Feed" type="application/atom+xml" /><!--[if lte IE 8]
+= javascript_include_tag  "html5shiv"--><link href="../../stylesheets/main-2037b4d3.css" rel="stylesheet" /><!--[if lte IE 9]
+= stylesheet_link_tag "ie9"--><!--[if lte IE 8]
+= stylesheet_link_tag "ie8"--><noscript><link href="../../stylesheets/noscript-71dc0972.css" rel="stylesheet" /></noscript></head><body class="is-loading"><div id="wrapper"><section class="article" id="blog"><header><h1><a href="/blog/articles/2013-02-12-install-pg-gem-on-ubuntu.html">Install pg gem on Ubuntu</a><time>February 12, 2013</time></h1><a class="back fa fa-angle-left" href="/blog">Back</a></header><article id="content"><p>Recently i had to deal with a strange error during deployment of one of my apps. The deploy crashed everytime at the installation of the pg gem as you can see in the log below:</p>
+<pre class="highlight shell"><code>Building native extensions.  This could take a <span class="k">while</span>...
+ERROR:  Error installing pg:
+  ERROR: Failed to build gem native extension.
+
+        /home/reckoning/.rvm/rubies/ruby-1.9.3-p385/bin/ruby extconf.rb
+checking <span class="k">for </span>pg_config... yes
+Using config values from /usr/bin/pg_config
+checking <span class="k">for </span>libpq-fe.h... yes
+checking <span class="k">for </span>libpq/libpq-fs.h... yes
+checking <span class="k">for </span>pg_config_manual.h... yes
+checking <span class="k">for </span>PQconnectdb<span class="o">()</span> <span class="k">in</span> -lpq... no
+checking <span class="k">for </span>PQconnectdb<span class="o">()</span> <span class="k">in</span> -llibpq... no
+checking <span class="k">for </span>PQconnectdb<span class="o">()</span> <span class="k">in</span> -lms/libpq... no
+Can<span class="s1">'t find the PostgreSQL client library (libpq)
+*** extconf.rb failed ***
+Could not create Makefile due to some reason, probably lack of
+necessary libraries and/or headers.  Check the mkmf.log file for more
+details.  You may need configuration options.
+
+Provided configuration options:
+  --with-opt-dir
+  --with-opt-include
+  --without-opt-include=${opt-dir}/include
+  --with-opt-lib
+  --without-opt-lib=${opt-dir}/lib
+  --with-make-prog
+  --without-make-prog
+  --srcdir=.
+  --curdir
+  --ruby=/home/reckoning/.rvm/rubies/ruby-1.9.3-p385/bin/ruby
+  --with-pg
+  --without-pg
+  --with-pg-dir
+  --without-pg-dir
+  --with-pg-include
+  --without-pg-include=${pg-dir}/include
+  --with-pg-lib
+  --without-pg-lib=${pg-dir}/lib
+  --with-pg-config
+  --without-pg-config
+  --with-pg_config
+  --without-pg_config
+  --with-pqlib
+  --without-pqlib
+  --with-libpqlib
+  --without-libpqlib
+  --with-ms/libpqlib
+  --without-ms/libpqlib
+
+
+Gem files will remain installed in /home/reckoning/.rvm/gems/ruby-1.9.3-p385/gems/pg-0.14.1 for inspection.
+Results logged to /home/reckoning/.rvm/gems/ruby-1.9.3-p385/gems/pg-0.14.1/ext/gem_make.out
+</span></code></pre>
+
+<p>As you can see he had a problem finding the required libpq (libpq-dev) libraries and therefore was unable to complete the bundle. Since i had already installed these libraries, i could not explain at first where the problem was.</p>
+<pre class="highlight plaintext"><code>Can't find the PostgreSQL client library (libpq)
+</code></pre>
+
+<p>I&rsquo;m using rvm to install my rubies and there seems to be a problem with some dependencies from my local rvm and my global postgres installation.</p>
+
+<p>I tried many solutions to fix this. From reinstalling postgres and his dev libraries to reinstalling ruby in my local rvm.</p>
+
+<p>To make a long frustrating night short, the solution for my problem was to make a complete cleanout of my local rvm with</p>
+<pre class="highlight plaintext"><code>rvm implode
+</code></pre>
+
+<p>and then</p>
+<pre class="highlight plaintext"><code>curl -L https://get.rvm.io | bash -s stable --ruby
+</code></pre>
+
+<p>to reinstall the newest version.</p>
+
+<p>After he compiled and installed the latest ruby (in my case 1.9.3-p385) i finally was able to install the pg gem.</p>
+</article><hr /><div id="disqus_thread"></div><script>/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+var disqus_shortname = 'mortikde'; // required: replace example with your forum shortname
+
+/* * * DON'T EDIT BELOW THIS LINE * * */
+(function() {
+  var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+  dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();</script><noscript>Please enable JavaScript to view the<a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript><a class="dsq-brlink" href="http://disqus.com">comments powered by<span class="logo-disqus">Disqus</span></a></section><footer id="footer"><ul class="copyright"><li><a href="mailto:me@mortik.xyz" target="_blank">&copy; Marten Klitzke</a></li><li><a href="/">Home</a></li><li><a href="/imprint">Imprint</a></li><li><a class="fa fa-rss" href="/blog/feed.xml" target="_blank"></a></li></ul></footer><script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-41009535-1', 'mortik.de');
+ga('send', 'pageview');</script></div><!--[if lte IE 8]
+= javascript_include_tag  "respond.min"--><script>if ('addEventListener' in window) {
+  window.addEventListener('load', function() { document.body.className = document.body.className.replace(/\bis-loading\b/, ''); });
+  document.body.className += (navigator.userAgent.match(/(MSIE|rv:11\.0)/) ? ' is-ie' : '');
+}</script></body></html>
