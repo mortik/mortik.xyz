@@ -17,12 +17,6 @@ set :css_dir, 'stylesheets'
 set :js_dir, 'javascripts'
 set :images_dir, 'images'
 
-activate :deploy do |deploy|
-  deploy.method = :git
-  deploy.build_before = true
-  deploy.commit_message = "Automated commit"
-end
-
 activate :blog do |blog|
   blog.permalink = "{year}/{title}"
   blog.layout = "layouts/blog"
