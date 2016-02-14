@@ -5,7 +5,7 @@ ruby '2.3.0'
 gem 'middleman', '< 4.0.0'
 gem 'middleman-blog'
 gem 'middleman-livereload'
-gem 'middleman-gh-pages'
+gem 'middleman-deploy'
 gem 'middleman-syntax'
 
 gem 'builder'

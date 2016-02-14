@@ -17,6 +17,10 @@ set :css_dir, 'stylesheets'
 set :js_dir, 'javascripts'
 set :images_dir, 'images'
 
+activate :deploy do |deploy|
+  deploy.method = :git
+end
+
 activate :blog do |blog|
   blog.permalink = "{year}/{title}"
   blog.layout = "layouts/blog"
