@@ -19,6 +19,8 @@ set :images_dir, 'images'
 
 activate :deploy do |deploy|
   deploy.method = :git
+  deploy.build_before = true
+  deploy.commit_message = "Automated commit at `timestamp`"
 end
 
 activate :blog do |blog|
