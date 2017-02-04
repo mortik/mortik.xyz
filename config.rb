@@ -9,6 +9,13 @@ activate :livereload
 activate :directory_indexes
 activate :syntax
 
+activate :deploy do |deploy|
+  deploy.method = :rsync
+  deploy.user          = "mortik"
+  deploy.host          = "erebor.mortik.xyz"
+  deploy.path          = "/home/mortik/static"
+end
+
 set :markdown_engine, :redcarpet
 set :markdown, fenced_code_blocks: true,
                autolink: true,
