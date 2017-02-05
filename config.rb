@@ -9,13 +9,6 @@ activate :livereload
 activate :directory_indexes
 activate :syntax
 
-activate :deploy do |deploy|
-  deploy.method = :rsync
-  deploy.user          = "mortik"
-  deploy.host          = "erebor.mortik.xyz"
-  deploy.path          = "/home/mortik/static"
-end
-
 set :markdown_engine, :redcarpet
 set :markdown, fenced_code_blocks: true,
                autolink: true,
@@ -40,4 +33,12 @@ configure :build do
 
   activate :asset_hash
   activate :relative_assets
+end
+
+activate :deploy do |deploy|
+  deploy.user = "mortik"
+  deploy.build_before = true
+  deploy.method = :rsync
+  deploy.host = "mortik.xyz"
+  deploy.path = "~/current"
 end
