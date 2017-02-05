@@ -7,9 +7,11 @@ gem 'middleman-blog'
 gem 'middleman-deploy', '~> 1.0'
 gem 'middleman-livereload'
 gem 'middleman-syntax'
-
-gem 'builder'
 gem 'redcarpet'
+
+gem 'bootstrap-sass'
+gem 'bourbon'
+
 gem 'slim'
 
 gem 'foreman'
