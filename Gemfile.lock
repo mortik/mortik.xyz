@@ -1,13 +1,3 @@
-GIT
-  remote: https://github.com/nulltask/middleman-deploy.git
-  revision: eaef09c4a0cf443d899f66266d687fe591a4ab9d
-  branch: feature/fix-test
-  specs:
-    middleman-deploy (2.0.0.pre.alpha)
-      middleman (>= 4.1.11)
-      net-sftp
-      ptools
-
 GEM
   remote: http://rubygems.org/
   specs:
@@ -109,9 +99,6 @@ GEM
       middleman-core (>= 3.2)
       rouge (~> 2.0)
     minitest (5.10.1)
-    net-sftp (2.1.2)
-      net-ssh (>= 2.6.5)
-    net-ssh (4.0.1)
     padrino-helpers (0.13.3.3)
       i18n (~> 0.6, >= 0.6.7)
       padrino-support (= 0.13.3.3)
@@ -119,7 +106,6 @@ GEM
     padrino-support (0.13.3.3)
       activesupport (>= 3.1)
     parallel (1.10.0)
-    ptools (1.3.3)
     public_suffix (2.0.5)
     rack (2.0.1)
     rack-livereload (0.3.16)
@@ -156,12 +142,12 @@ DEPENDENCIES
   foreman
   middleman
   middleman-blog
-  middleman-deploy!
   middleman-livereload
   middleman-sprockets
   middleman-syntax
   redcarpet
   slim
+  thor
 
 RUBY VERSION
    ruby 2.3.3p222

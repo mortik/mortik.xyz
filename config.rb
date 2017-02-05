@@ -19,7 +19,6 @@ set :css_dir, 'stylesheets'
 set :js_dir, 'javascripts'
 set :images_dir, 'images'
 
-
 activate :blog do |blog|
   blog.permalink = "{year}/{title}"
   blog.layout = "layouts/blog"
@@ -40,12 +39,4 @@ configure :build do
 
   activate :asset_hash
   activate :relative_assets
-end
-
-activate :deploy do |deploy|
-  deploy.user = "mortik"
-  deploy.build_before = true
-  deploy.deploy_method = :rsync
-  deploy.host = "mortik.xyz"
-  deploy.path = "~/current"
 end
