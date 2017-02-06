@@ -7,6 +7,7 @@ gem 'middleman-blog'
 gem 'middleman-livereload'
 gem 'middleman-sprockets'
 gem 'middleman-syntax'
+gem 'nokogiri'
 gem 'redcarpet'
 
 gem 'builder'
