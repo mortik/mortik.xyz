@@ -18,6 +18,7 @@
 		@include vendor('perspective', '1000px');
 		position: relative;
 		min-height: 100%;
+		max-height: 100%;
 		padding: _size(element-margin);
 		z-index: 2;
 
