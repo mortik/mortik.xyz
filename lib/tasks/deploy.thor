@@ -8,7 +8,7 @@ class Deploy < Thor
   include Thor::Actions
 
   USER = "mortik".freeze
-  HOST = "mortik.xyz".freeze
+  HOST = "mortik.de".freeze
   DEPLOY_TO = "~/current".freeze
 
   desc "start", "Deploy site to server"
@@ -22,7 +22,7 @@ class Deploy < Thor
   no_commands do
     private def build
       puts "Building current site..."
-      run %(middleman build)
+      run %(bundle exec middleman build)
     end
 
     private def deploy
