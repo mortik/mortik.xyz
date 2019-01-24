@@ -5,13 +5,6 @@ footer#footer
     - if current_page.data.active_page != 'index'
       li
         a href="/" Home
-    - if current_page.data.active_page != 'blog'
-      li
-        a href="/blog" Blog
     - if current_page.data.active_page != 'imprint'
       li
         a href="/imprint" Imprint
-    li
-      a.fa.fa-rss target="_blank" href="/blog/feed.xml"
-      
-= partial 'layouts/google_analytics'

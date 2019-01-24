@@ -6,8 +6,7 @@ html
     meta name="viewport" content="width=device-width, initial-scale=1"
     link rel="mask-icon" href="/favicon.svg" color="#555555"
     link rel="shortcut icon" type="image/png" href="/favicon.png"
-    
-    link href="/blog/feed.xml" rel="alternate" title="Marten's Blog Feed" type="application/atom+xml"
+
     /![if lte IE 8]
       = javascript_include_tag  "html5shiv"
     = stylesheet_link_tag "main"
@@ -20,9 +19,9 @@ html
   body.is-loading
     #wrapper
       = yield
-      
+
       = partial "layouts/footer"
-      
+
     /![if lte IE 8]
       = javascript_include_tag  "respond.min"
     javascript:

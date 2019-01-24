@@ -1,32 +1,32 @@
 #!/usr/bin/env ruby
-# encoding: utf-8
 # frozen_string_literal: true
-require "rubygems"
-require "thor"
+
+require 'rubygems'
+require 'thor'
 
 class Deploy < Thor
   include Thor::Actions
 
-  USER = "mortik".freeze
-  HOST = "mortik.de".freeze
-  DEPLOY_TO = "~/current".freeze
+  USER = 'mortik'
+  HOST = 'mortik.de'
+  DEPLOY_TO = '~/current'
 
-  desc "start", "Deploy site to server"
+  desc 'start', 'Deploy site to server'
   def start
-    puts "Starting deployment..."
+    puts 'Starting deployment...'
     build
     deploy
-    puts "Deployment Finished"
+    puts 'Deployment Finished'
   end
 
   no_commands do
     private def build
-      puts "Building current site..."
+      puts 'Building current site...'
       run %(bundle exec middleman build)
     end
 
     private def deploy
-      puts "Syncing files..."
+      puts 'Syncing files...'
       run %(rsync -a -P ./build/ #{USER}@#{HOST}:#{DEPLOY_TO})
     end
   end
