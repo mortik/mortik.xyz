@@ -20,3 +20,8 @@ configure :build do
   activate :asset_hash
   activate :relative_assets
 end
+
+activate :deploy do |deploy|
+  deploy.build_before = true
+  deploy.method = :git
+end

@@ -6,7 +6,7 @@ ruby '3.0.0'
 
 gem 'middleman', github: 'middleman/middleman', branch: '4.x'
 gem 'middleman-syntax'
-gem 'middleman-gh-pages'
+gem 'middleman-deploy'
 gem 'nokogiri'
 gem 'redcarpet'
 
