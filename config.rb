@@ -6,12 +6,12 @@ page '/*.xml', layout: false
 page '/*.json', layout: false
 page '/*.txt', layout: false
 
-activate :directory_indexes
-activate :syntax
-
 set :css_dir, 'stylesheets'
 set :js_dir, 'javascripts'
 set :images_dir, 'images'
+
+activate :directory_indexes
+activate :syntax
 
 configure :build do
   activate :minify_css
@@ -19,9 +19,4 @@ configure :build do
 
   activate :asset_hash
   activate :relative_assets
-end
-
-activate :deploy do |deploy|
-  deploy.build_before = true
-  deploy.method = :git
 end
