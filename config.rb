@@ -7,16 +7,11 @@ page '/*.json', layout: false
 page '/*.txt', layout: false
 
 activate :directory_indexes
-activate :sprockets
 activate :syntax
 
 set :css_dir, 'stylesheets'
 set :js_dir, 'javascripts'
 set :images_dir, 'images'
-
-configure :development do
-  activate :livereload
-end
 
 configure :build do
   activate :minify_css
