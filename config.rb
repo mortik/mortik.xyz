@@ -5,6 +5,7 @@ Encoding.default_external = 'utf-8'
 page '/*.xml', layout: false
 page '/*.json', layout: false
 page '/*.txt', layout: false
+page 'docs/CNAME', directory_index: false
 
 set :css_dir, 'stylesheets'
 set :js_dir, 'javascripts'
